@@ -18,5 +18,6 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'space-before-function-paren': ['error', 'never'],
+    'comma-dangle': ['error', 'always-multiline'],
   },
 }
