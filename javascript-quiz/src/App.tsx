@@ -1,7 +1,11 @@
+import { Game } from './Game'
 import { JavaScriptLogo } from './JavaScriptLogo'
 import { Start } from './Start'
+import { useQuestionsStore } from './store/question'
 
 function App() {
+  const questions = useQuestionsStore((state) => state.questions)
+
   return (
     <main>
       <div className='min-h-screen flex items-center justify-center flex-col'>
@@ -9,7 +13,10 @@ function App() {
           <JavaScriptLogo />
           <h1 className='font-medium text-4xl'>JavaScript Quiz</h1>
         </header>
-        <Start />
+        <div className='mt-6'>
+          {questions.length === 0 && <Start />}
+          {questions.length > 0 && <Game />}
+        </div>
       </div>
     </main>
   )
