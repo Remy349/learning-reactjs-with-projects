@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import { gradientDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { type Question as QuestionType } from './types'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Footer } from './Footer'
 
 const getBackgroundColor = (info: QuestionType, index: number) => {
   const { userSelectedAnswer, correctAnswer } = info
@@ -81,6 +82,7 @@ export const Game = () => {
         </button>
       </div>
       <Question info={questionInfo} />
+      <Footer />
     </>
   )
 }
